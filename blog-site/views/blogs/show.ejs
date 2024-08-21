@@ -1,0 +1,11 @@
+<%- include('../partials/header', { title: blog.title }) %>
+
+<div class="container">
+  <h2><%= blog.title %></h2>
+  <p><strong>Author:</strong> <%= blog.author %></p>
+  <p><%= blog.content %></p>
+  <a href="/blogs/<%= blog._id %>/edit">Edit Blog</a>
+  <a href="/blogs">Back to All Blogs</a>
+</div>
+
+<%- include('../partials/footer') %>
