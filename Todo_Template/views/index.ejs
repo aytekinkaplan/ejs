@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <!-- send code to nodejs -->
+    <%
+        console.log('hello world')
+        console.log('bla bla')
+    %>
+    <!-- safe-print to html -->
+    <%= (5+9) %>
+    <%= '<p>Selam <b>Dünyalı</b></p>' %>
+    <!-- direct-print to html -->
+    <%- '<p>Selam <b>Dünyalı</b></p>' %>
+    <!-- comment with ejs -->
+    <%# comment %>
+    <!-- no-template -->
+    <%% no template  %>
+    <!--  direct-print to html and remove newLine (\n) -->
+    <%- '<p>Selam <b>Dünyalı</b></p>' -%>
+</body>
+</html>
