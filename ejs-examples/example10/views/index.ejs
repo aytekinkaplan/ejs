@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><% = page %></title>
+    <title><%= page %></title>
   </head>
   <body>
-    <% = page %>
+    <%= page %>
     <nav>
       <a href="/">Home</a>
       <a href="/about">About</a>
       <a href="/contact">Contact</a>
     </nav>
     <main>
-      <% if (page === 'home') { %>
+      <% if (page === 'Home') { %>
       <h1>Home Page</h1>
       <p>Welcome to our website</p>
       <% } else if (page === 'about') { %>
@@ -23,7 +23,7 @@
       <h1>Contact</h1>
       <p>This is our contact page</p>
       <% } else { %>
-      <h1>404 - Page wasn't foundı</h1>
+      <h1>404 - Page wasn't found</h1>
       <p>We can't find the page you're looking for.</p>
       <% } %>
     </main>

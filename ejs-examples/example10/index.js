@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/:page", (req, res) => {
-  const page = req.params.page;
+  const page = req.params.page.toLowerCase(); // Parametreyi küçük harfe dönüştürüyoruz
   res.render("index", { page: page });
 });
 
