@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><% = page %></title>
+  </head>
+  <body>
+    <% = page %>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <main>
+      <% if (page === 'home') { %>
+      <h1>Home Page</h1>
+      <p>Welcome to our website</p>
+      <% } else if (page === 'about') { %>
+      <h1>About us</h1>
+      <p>Biz bir web geliştirme şirketiyiz.</p>
+      <% } else if (page === 'contact') { %>
+      <h1>Contact</h1>
+      <p>This is our contact page</p>
+      <% } else { %>
+      <h1>404 - Page wasn't foundı</h1>
+      <p>We can't find the page you're looking for.</p>
+      <% } %>
+    </main>
+  </body>
+</html>
