@@ -4,6 +4,6 @@ Here is a simple flow chart:
 graph TD;
     A-->B;
     A-->C;
-    B-->D;
-    C-->D;
+    A-->D;
+    A-->E;
 ```
