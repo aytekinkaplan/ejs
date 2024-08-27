@@ -1,183 +1,27 @@
-Here is a simple flow chart:
+sequenceDiagram
+participant browser
+participant server
 
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    A-->D;
-    A-->E;
-```
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    activate server
+    server-->>browser: HTML document
+    deactivate server
 
-```geojson
-{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "id": 1,
-      "properties": {
-        "ID": 0
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -90,
-              35
-            ],
-            [
-              -90,
-              30
-            ],
-            [
-              -85,
-              30
-            ],
-            [
-              -85,
-              35
-            ],
-            [
-              -90,
-              35
-            ]
-          ]
-        ]
-      }
-    }
-  ]
-}
-```
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate server
+    server-->>browser: the css file
+    deactivate server
 
-```topojson
-{
-  "type": "Topology",
-  "transform": {
-    "scale": [
-      0.0005000500050005,
-      0.00010001000100010001
-    ],
-    "translate": [
-      100,
-      0
-    ]
-  },
-  "objects": {
-    "example": {
-      "type": "GeometryCollection",
-      "geometries": [
-        {
-          "type": "Point",
-          "properties": {
-            "prop0": "value0"
-          },
-          "coordinates": [
-            4000,
-            5000
-          ]
-        },
-        {
-          "type": "LineString",
-          "properties": {
-            "prop0": "value0",
-            "prop1": 0
-          },
-          "arcs": [
-            0
-          ]
-        },
-        {
-          "type": "Polygon",
-          "properties": {
-            "prop0": "value0",
-            "prop1": {
-              "this": "that"
-            }
-          },
-          "arcs": [
-            [
-              1
-            ]
-          ]
-        }
-      ]
-    }
-  },
-  "arcs": [
-    [
-      [
-        4000,
-        0
-      ],
-      [
-        1999,
-        9999
-      ],
-      [
-        2000,
-        -9999
-      ],
-      [
-        2000,
-        9999
-      ]
-    ],
-    [
-      [
-        0,
-        0
-      ],
-      [
-        0,
-        9999
-      ],
-      [
-        2000,
-        0
-      ],
-      [
-        0,
-        -9999
-      ],
-      [
-        -2000,
-        0
-      ]
-    ]
-  ]
-}
-```
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    activate server
+    server-->>browser: the JavaScript file
+    deactivate server
 
-```stl
-solid cube_corner
-  facet normal 0.0 -1.0 0.0
-    outer loop
-      vertex 0.0 0.0 0.0
-      vertex 1.0 0.0 0.0
-      vertex 0.0 0.0 1.0
-    endloop
-  endfacet
-  facet normal 0.0 0.0 -1.0
-    outer loop
-      vertex 0.0 0.0 0.0
-      vertex 0.0 1.0 0.0
-      vertex 1.0 0.0 0.0
-    endloop
-  endfacet
-  facet normal -1.0 0.0 0.0
-    outer loop
-      vertex 0.0 0.0 0.0
-      vertex 0.0 0.0 1.0
-      vertex 0.0 1.0 0.0
-    endloop
-  endfacet
-  facet normal 0.577 0.577 0.577
-    outer loop
-      vertex 1.0 0.0 0.0
-      vertex 0.0 1.0 0.0
-      vertex 0.0 0.0 1.0
-    endloop
-  endfacet
-endsolid
-```
+    Note right of browser: The browser starts executing the JavaScript code that fetches the JSON from the server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>browser: [{ "content": "HTML is easy", "date": "2023-1-1" }, ... ]
+    deactivate server
+
+    Note right of browser: The browser executes the callback function that renders the notes
